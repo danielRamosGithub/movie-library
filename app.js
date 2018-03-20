@@ -5,6 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+/******************************************
+References For the database
+*******************************************/
+const mongoose = require('mongoose');
+const config = require('./config/globals');
+/******************************************/
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -24,6 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+// Database connection
+mongoose.connect(config.db);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

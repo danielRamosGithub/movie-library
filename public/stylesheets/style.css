@@ -1,8 +1,25 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url("../images/background.jpg");
+  color: white;
 }
 
-a {
-  color: #00B7FF;
+.splash-page a {
+  color: white !important;
+}
+
+/* HOME PAGE */
+
+div.home-page {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.splash-page {
+  border: 2px solid #808080;
+  border-radius: 10px;
+  text-align: center;
+  color: #808080;
+  background-color: white;
+  padding: 20px;
 }

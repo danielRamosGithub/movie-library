@@ -1,5 +1,24 @@
+<% include partials/header.ejs %>
 
+  <div class="row home-page">
 
-  <h1><%= title %></h1>
+    <!-- <div class="col-md-12">
+      <div class="col-md-5 offset-md-4">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+    </div> end of div.col-md-12 -->
+
+    <div class="col-md-6 offset-md-3 splash-page">
+        <h1><%= punchLine %></h1>
+        <p><%= message %></p>
+        <h4><%= thankYou %></h4>
+        <a href="/movies" class="btn btn-info">CLick to Browse the Movies</a>
+    </div>
+    
+  </div><!-- end of div.row home-page -->
   
 
+<% include partials/footer.ejs %>

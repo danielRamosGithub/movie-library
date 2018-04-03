@@ -11,4 +11,18 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// GET: /login
+router.get('/login', (req, res, next) => {
+  res.render('login', {
+    title: 'Login Page'
+  });
+});
+
+// GET: /register
+router.get('/register', (req, res, next) => {
+  res.render('register', {
+    title: 'Register Page'
+  });
+});
+
 module.exports = router;

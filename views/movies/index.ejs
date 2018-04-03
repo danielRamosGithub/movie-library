@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+
+    <div class="row actions">
+        <a href="/movies/add" class="btn btn-success">Add a new Movie</a>
+    </div>
+
+    <div class="row">
+            <h1><%= title %></h1>
+    </div>
+
+    <div class="row movie-list-page">
+    
+        <div class="card col-md-3">
+            <div class="card-body">
+                <h3 class="card-title">Movie Title</h3>
+                <a href="details" class="btn btn-info">Details</a>
+                <br />
+                <!-- Admin Buttons -->
+                <a href="/movies/edit" class="btn btn-warning">Edit</a>
+                <a href="/movies/delete" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+
+    </div> <!-- end div.row movie-list-page -->
+
+<% include ../partials/footer.ejs %>

@@ -3,6 +3,8 @@ var express = require('express');
 var router = express.Router();
 const Movie = require('../models/movie');
 
+const functions = require('../config/functions')
+
 // GET: /movies
 router.get('/', (req, res, next) => {
     // get movie documents from db
@@ -12,23 +14,23 @@ router.get('/', (req, res, next) => {
         } else {
             res.render('movies/index', {
                 title: 'Movie List',
-                movies: movies
-                // ,
-                // user: req.user
+                movies: movies,
+                user: req.user
             });
         }
     });
 });
 
 // GET: /movies/add
-router.get('/add', (req, res, next) => {
+router.get('/add', functions.isLoggedIn, (req, res, next) => {
     res.render('movies/add', {
-        title: 'Add a new movie to the List'
+        title: 'Add a new movie to the List',
+        user: req.user
     });
 });
 
 // POST: /movies/add
-router.post('/add', (req, res, next) => {
+router.post('/add', functions.isLoggedIn, (req, res, next) => {
     Movie.create({
         title: req.body.title,
         yearRelease: req.body.yearRelease,
@@ -45,7 +47,7 @@ router.post('/add', (req, res, next) => {
 });
 
 // GET: /movies/delete/abc123
-router.get('/delete/:_id', (req, res, next) => {
+router.get('/delete/:_id', functions.isLoggedIn, (req, res, next) => {
     // get the _id parameter from the url and store in a local variable
     let _id = req.params._id;
 
@@ -60,7 +62,7 @@ router.get('/delete/:_id', (req, res, next) => {
 });
 
 // GET: /movies/edit/abc123
-router.get('/edit/:_id', (req, res, next) => {
+router.get('/edit/:_id', functions.isLoggedIn, (req, res, next) => {
     let _id = req.params._id;
 
     Movie.findById(_id, (err, movie) => {
@@ -69,14 +71,15 @@ router.get('/edit/:_id', (req, res, next) => {
         } else {
             res.render('movies/edit', {
                 title: 'Movie Information',
-                movie: movie
+                movie: movie,
+                user: req.user
             });
         }
     });
 });
 
 // POST: /movies/edit/abc123
-router.post('/edit/:_id', (req, res, next) => {
+router.post('/edit/:_id', functions.isLoggedIn, (req, res, next) => {
     // get the _id from URL
     let _id = req.params._id;
 
@@ -109,7 +112,8 @@ router.get('/details/:_id', (req, res, next) => {
         } else {
             res.render('movies/details', {
                 movie: movie,
-                title: movie.title
+                title: movie.title,
+                user: req.user
             });
         }
     });

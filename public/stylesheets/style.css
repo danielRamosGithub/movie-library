@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: url("../images/background.jpg");
 }
 
@@ -13,7 +13,7 @@ body h1 {
 }
 
 /* COMMOM CSS */
-div.home-page, .movie-list-page, .add-movie, .movie-page {
+div.home-page, .movie-list-page, .add-movie, .movie-page, .auth-page {
   padding-top: 45px;
   /* padding-bottom: 45px; */
 }
@@ -39,7 +39,7 @@ header form a {
 /* MOVIE LIST PAGE */
 .actions {
   padding-top: 45px;
-  padding-bottom: 45px;
+  /* padding-bottom: 45px; */
 }
 .card {
   margin: 2% 4%;
@@ -72,4 +72,16 @@ header form a {
 }
 .movie-information h4 {
   text-decoration: underline;
+}
+
+/* LOGIN AND REGISTER PAGE */
+.auth-form {
+  padding-top: 45px;
+}
+.auth-form form {
+  padding: 15px;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  color: black;
+  background-color: lightgray;
 }

@@ -1,24 +1,30 @@
 <% include partials/header.ejs %>
 
-    <h1>Login</h1>
+    <div class="row auth-page">
 
-    
+        <div class="col-md-12">
+            <h1><%= title %></h1>
+        </div>
 
-    <form method="post">
-        <fieldset class="form-group">
-            <label for="username" class="col-sm-2 control-label">Username: *</label>
-            <input name="username" id="username" required />
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="password" class="col-sm-2 control-label">Password: *</label>
-            <input name="password" id="password" type="password" required />
-        </fieldset>
+        <div class="col-md-12 auth-form">
+            <form method="post">
+                <fieldset class="form-group">
+                    <label for="username" class="col-sm-2 control-label">Username: *</label>
+                    <input name="username" id="username" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password: *</label>
+                    <input name="password" id="password" type="password" class="form-control" required />
+                </fieldset>
 
-        <button class="btn btn-success offset-2">Login</button>
-        <!-- <a href="/google"><img src="images/google.png" alt="google authentication"></a>
-        <hr /> -->
-        Need access?  <a href="/register" title="Register">Register</a>
-    </form>
+                <button class="btn btn-success">Login</button>
+                <!-- <a href="/google"><img src="images/google.png" alt="google authentication"></a> -->
+                <hr /> 
+                Need access?  <a href="/register" title="Register">Register</a>
+            </form>
+        </div>
+
+    </div>
 
 
 <% include partials/footer.ejs %>

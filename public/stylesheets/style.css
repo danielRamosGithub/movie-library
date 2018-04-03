@@ -8,12 +8,12 @@ body h1 {
   color: white;
 }
 
-.splash-page a {
+.splash-page a, .add-movie a {
   color: white !important;
 }
 
 /* COMMOM CSS */
-div.home-page, .movie-list-page  {
+div.home-page, .movie-list-page, .add-movie {
   padding-top: 45px;
   /* padding-bottom: 45px; */
 }
@@ -42,4 +42,13 @@ div.home-page, .movie-list-page  {
 }
 .card a {
   margin: 5px;
+}
+
+/* ADD MOVIE PAGE */
+.add-movie form {
+  padding: 15px;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  color: #808080;
+  background-color: white;
 }

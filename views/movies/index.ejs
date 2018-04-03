@@ -10,16 +10,18 @@
 
     <div class="row movie-list-page">
     
+        <% for(let i = 0; i < movies.length; i++) { %>
         <div class="card col-md-3">
             <div class="card-body">
-                <h3 class="card-title">Movie Title</h3>
-                <a href="details" class="btn btn-info">Details</a>
+                <h3 class="card-title"><%= movies[i].title %></h3>
+                <a href="/movies/details/<%= movies[i]._id %>" class="btn btn-info">Details</a>
                 <br />
                 <!-- Admin Buttons -->
-                <a href="/movies/edit" class="btn btn-warning">Edit</a>
-                <a href="/movies/delete" class="btn btn-danger">Delete</a>
+                <a href="/movies/edit/<%= movies[i]._id %>" class="btn btn-warning">Edit</a>
+                <a href="/movies/delete/<%= movies[i]._id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this master piece of movie?')">Delete</a>
             </div>
         </div>
+        <% } %>
 
     </div> <!-- end div.row movie-list-page -->
 

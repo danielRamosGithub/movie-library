@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+
+    <div class="row add-movie">
+
+        <div class="col-md-12">
+            <h1><%= title %></h1>
+        </div>
+
+        <div class="col-md-12">
+
+            <form method="post">
+                <fieldset class="form-group">
+                    <label class="control-label col-md-2" for="title">Title: *</label>
+                    <input type="text" class="form-control" name="title" id="title" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="control-label col-md-2" for="yearRelease">Year Released: *</label>
+                    <input type="number" class="form-control" name="yearRelease" id="yearRelease" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="control-label col-md-2" for="storyLine">Storyline: *</label>
+                    <!-- <input type="text" class="form-control" name="storyLine" id="storyLine" /> -->
+                    <textarea class="form-control" name="storyLine" id="storyLine" rows="5"></textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="control-label col-md-2" for="mainActor">Main Actor: *</label>
+                    <input type="text" class="form-control" name="mainActor" id="mainActor" />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="control-label col-md-2" for="director">Director: *</label>
+                    <input type="text" class="form-control" name="director" id="director" />
+                </fieldset>
+                <button class="btn btn-primary">Save</button>
+            </form>
+
+        </div>
+
+    </div> <!-- end div.add-movie -->
+
+<% include ../partials/footer.ejs %>

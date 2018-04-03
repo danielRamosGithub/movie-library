@@ -1,0 +1,34 @@
+<% include ../partials/header.ejs %>
+
+    <div class="row movie-page">
+
+        <div class="col-md-12">
+            <h1><%= title %></h1>
+        </div>
+
+        <div class="movie-information row">
+
+            <div class="col-md-12">
+                <h4>Storyline</h4>
+                <p><%= movie.storyLine %></p>
+                <hr>
+            </div>
+           
+            <div class="col-md-4">
+                <h4>Main Actor</h4>
+                <p><%= movie.mainActor %></p>
+            </div>
+            <div class="col-md-4">
+                <h4>Director</h4>
+                <p><%= movie.director %></p>
+            </div>
+            <div class="col-md-4">
+                <h4>Year Released</h4>
+                <p><%= movie.yearRelease %></p>
+            </div>
+
+        </div>
+
+    </div> <!-- div.movie-page -->
+
+<% include ../partials/footer.ejs %>

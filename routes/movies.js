@@ -49,7 +49,7 @@ router.get('/delete/:_id', (req, res, next) => {
     // get the _id parameter from the url and store in a local variable
     let _id = req.params._id;
 
-    // use the Car model to delete the document with this id
+    // use the Movie model to delete the document with this id
     Movie.remove({_id: _id}, (err) => {
         if (err) {
             console.log(err);
@@ -63,7 +63,6 @@ router.get('/delete/:_id', (req, res, next) => {
 router.get('/edit/:_id', (req, res, next) => {
     let _id = req.params._id;
 
-    // use Car model to find the selected document
     Movie.findById(_id, (err, movie) => {
         if(err) {
             console.log(err);
@@ -81,7 +80,7 @@ router.post('/edit/:_id', (req, res, next) => {
     // get the _id from URL
     let _id = req.params._id;
 
-    // call Mongoose update method, passing the _id and the new car object
+    // call Mongoose update method, passing the _id and the new movie object
     Movie.update({_id: _id}, 
         {
             $set: {
@@ -97,6 +96,22 @@ router.post('/edit/:_id', (req, res, next) => {
             } else {
                 res.redirect('/movies');
             }
+    });
+});
+
+//GET: /movies/details/abc123
+router.get('/details/:_id', (req, res, next) => {
+    let _id = req.params._id;
+
+    Movie.findById(_id, (err, movie) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render('movies/details', {
+                movie: movie,
+                title: movie.title
+            });
+        }
     });
 });
 

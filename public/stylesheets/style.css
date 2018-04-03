@@ -13,7 +13,7 @@ body h1 {
 }
 
 /* COMMOM CSS */
-div.home-page, .movie-list-page, .add-movie {
+div.home-page, .movie-list-page, .add-movie, .movie-page {
   padding-top: 45px;
   /* padding-bottom: 45px; */
 }
@@ -36,12 +36,14 @@ div.home-page, .movie-list-page, .add-movie {
 }
 .card {
   margin: 2% 4%;
+  background-color: lightgray;
 }
 .card h3 {
   text-align: center;
 }
 .card a {
   margin: 5px;
+  color: white !important;
 }
 
 /* ADD MOVIE PAGE */
@@ -49,6 +51,18 @@ div.home-page, .movie-list-page, .add-movie {
   padding: 15px;
   border: 2px solid #808080;
   border-radius: 10px;
-  color: #808080;
-  background-color: white;
+  color: black;
+  background-color: lightgray; 
+}
+
+/* MOVIE PAGE */
+.movie-information {
+  padding: 15px;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  color: black;
+  background-color: lightgray; 
+}
+.movie-information h4 {
+  text-decoration: underline;
 }

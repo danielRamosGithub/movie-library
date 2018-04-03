@@ -37,9 +37,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/movies', movies);
-
 // Database connection
 mongoose.connect(config.db);
 
@@ -52,6 +49,10 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// passport configuration
+app.use(passport.initialize());
+app.use(passport.session());
+
 const User = require('./models/user');
 
 passport.use(User.createStrategy());
@@ -61,6 +62,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 /******************************************/
+
+app.use('/', index);
+app.use('/movies', movies);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

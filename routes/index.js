@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const passport  = require('passport');
+const User = require('../models/user');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -18,10 +20,30 @@ router.get('/login', (req, res, next) => {
   });
 });
 
+// POST: //login
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/movies',
+  failureRedirect: '/login',
+  failureMessage: 'Invalid Login'
+}));
+
 // GET: /register
 router.get('/register', (req, res, next) => {
   res.render('register', {
     title: 'Register Page'
+  });
+});
+
+// POST: /register
+router.post('/register', (req, res, next) => {
+  User.register(new User ({
+    username: req.body.username
+  }), req.body.password, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/login');
+    }
   });
 });
 
